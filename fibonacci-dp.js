@@ -5,11 +5,12 @@ const fibonacciDp = (index, workDone) => {
     return memo[`${index}`];
   }
 
-  workDone.calls = workDone.calls + 1;
-  
+
   if (index <= 2) {
     return 1;
   }
+  
+  workDone.calls = workDone.calls + 1;
 
   const result = fibonacciDp(index - 1, workDone) + fibonacciDp(index - 2, workDone);
   memo[`${index}`] = result;
